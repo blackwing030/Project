@@ -1,0 +1,75 @@
+*		
+		//find edge
+		for(int i = 0;i < width;i++){
+			for(int j=0;j < height;j++){
+				//row
+				rgbData[i][j]=outputimage.getRGB(i, j);
+				blue[i][j]  = (rgbData[i][j]) & 0xff;
+				if(blue[i][j] == 0){		
+					upflag_one   = true;
+				}			
+				else{
+					downflag_one = true;
+				}
+				if((i+1) != width){
+					//next row
+					rgbData[i+1][j]=outputimage.getRGB(i+1,j);
+					blue[i+1][j]  = (rgbData[i][j]) & 0xff;
+					if(blue[i+1][j] == 0){		
+						downflag_two = true;
+					}			
+					else{
+						
+						upflag_two   = true;
+					}	
+				}	
+				
+				
+			}
+	
+			
+			//check upedge
+			if(upflag_one == true && upflag_two == true)
+			{
+				upedge[upcount]= i;
+				upcount++;
+
+			}
+			//check downedge
+			if(downflag_one == true && downflag_two == true)
+			{
+				downedge[downcount]= i;
+				downcount++;
+
+			}
+			upflag_one = false;
+			upflag_two = false;
+			downflag_one = false;
+			downflag_two = false;			
+			
+			
+			
+		}	
+		
+		
+		
+		int count=0;
+		upcount = 0;
+		downcount =0;
+		//mark edge 
+		for(int i = 0;i < width && upedge[upcount]!=0 ;i++){
+			
+			int row = upedge[count];
+			markedge(width,height,row,outputimage);
+			count++;
+			upcount++;
+		}
+		count = 0;
+		for(int i = 0;i < width && downedge[downcount]!=0 ;i++){
+			
+			int row = downedge[count];
+			markedge(width,height,row,outputimage);
+			count++;
+			downcount++;
+		}
+*/		
