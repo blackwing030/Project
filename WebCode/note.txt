@@ -1,0 +1,185 @@
+html4.0版
+//設定背景顏色 &超連結顏色 Alink 設定作用中node顏色
+//LINK 節點未點過之前顏色 VLINK點過NODE的顏色
+<body bgcolor ="代碼">
+<body bgcolor ="#00bfff">
+<body bgcolor ="black" Alink = "#rrggbb">
+
+
+
+//格式化文字
+<p>表示段落的結束</p>
+靠左 <p ALIGN = LEFT> </p>
+靠中 <p ALIGN = CENTER> </p>
+靠右 <p ALIGN = RIGHT></p>
+
+//換行 且有5屬性 class id style title cear
+<br>
+
+//版面配置:用來定義文件的一個區塊，這區塊可包含標題　段落等玩 (包在段落外面)
+<div ALIGN = RIGHT>
+<p>123123</p>
+</div>
+
+//空元件,可給他屬性 class style title  dir lang align color noshade size src width
+<HR>
+<HR ALIGN=LEFT SIZE=20 WIDTH=70%>
+size 設定水平線高度 單位:像素
+width 設定水平線寬度 單位:像素or百分比
+color rgb 16進位表示 or 顏色名稱 ex:#rrggbb
+src = url 給網址
+
+//字形設定
+<font>沒設定東西</font><br>
+<font size = 1>size=1的字</font>
+<font size = -1>比預設-1大小的字</font>
+<font size = +2>比預設-2大小的字</font>
+
+//font中face屬性可改變字形
+<font face = "vendana,華康少女體W6"> 第一種字形系同沒有 則用第二種字形
+
+//basefont 設定文件預設屬性,所有沒有使用font定義的文字會使用<basefont>中的設定
+
+//字體
+<strong>粗體字</strong>
+<code>標示程式碼</code>
+<sup>文字上標</sup>
+<sub>文字下標</sub>
+<big>放大文字</big>
+<small>縮小文字</small>
+<B>粗體字</B>
+<I>斜體字</I>
+<U>底線</U>
+<DFN>定義</DFN>
+
+//performatted <pre>標示一個區塊，如同文字編輯器
+<PRE>
+內容，如同ｔｘｔ檔依樣 
+</pre>
+
+//<UL>容器元件 <LI>列舉項目(ul type有 dise點 square正方形 circle圓)
+<UL =TYPE = DISC>
+<LI>列舉項目一(如PPT的項目旁邊會有點點)
+<LI>項目二
+<LI>項目三
+</UL>
+
+//<OL> <LI>同上 OL旁邊為1. 2. 3.(OL type = 1數字 A大寫 a小寫 i羅馬數字小寫 I羅馬數字大寫)
+<OL>
+<LI>項目一
+<LI>項目二
+<LI>項目三
+</OL>
+
+//超連結 <A> 定位錨元件用來設定超連結最主要的元件 
+<BODY>
+按一下 <A HREF ="http:www.dfdsfg.com.tw">這裡</A>
+<A HREF = "ftp://ftp.mircosoft.com">
+
+</BODY>
+
+//同個網站要連結 123.html連到456.html
+<A HREF = "456.html">(同目錄)
+<A HREF ="name/456.html">(name資料夾底下的html)
+
+//網頁內連結 <A NAME> (例如在網頁上層有目錄清單 點一下 跑到同一頁面下面)
+<A NAME = "name"被連結的點></A>
+<A HREF = "#name">超連結點</A>
+<A HREF = "123.HTML#NAME"</A>
+
+//A 標籤屬性
+ACCESSKEY 指定按下哪一個鍵盤的字元來啟動這個連結
+	ACCESSKEY = "key"
+CHARSET 定義連結文件的編碼方式(ex utf-8)
+	CHARSET = "character_set"
+COORDS 這個屬性是使用在影像地圖中
+
+SHAPE 這個屬性是使用在影像地圖中
+
+HREFLANG 宣告HREF所指定資源所用的語言，而且只能在HREF同時定義時使用
+	HREFLANG = "langcode"
+REL 宣告文件和由HREF指定資源的正向關係
+	REL = "relationship"
+REV 宣告文件和由HREF指定資源的反向關係
+	REV = "relationship"	
+
+TABINDEX 指定這個超連結在tab跳位順序中的位置
+	TABINDEX = number
+TARGET 指定這個超連結所參照的文件所要載入的視窗或窗格(frame)
+
+MINE 指定這個超連結所用的MINE型態
+	TYPE =MINE-type
+
+//	<BASE>設定這個(預設對應URL) 不包含檔名 且要放在<HEAD>之前
+<BASE HREF = "url">
+
+//圖像
+<IMG SRC ="balloon.gif" HSPACE=50 VSPACE=50>
+
+//表單<form> 常用屬性action method 
+action:表示交付這個表單時是使用哪個url接收資料
+	action = url 
+method:用來指定傳送到伺服器的方式 get or post
+	method = get or post(最好用post)
+<form>
+內容
+</form>
+
+//表單內容<input> 屬性
+text 建立單行文字 可配合size maxlength屬性使用
+password 建立和text依樣的單行框 但是輸入的文字不會顯示出來
+checkbox 建立一個核取方塊 被核取的方塊交付時 產生數值on
+radio 建立選項按鈕 提供多個選項 但只能選取一個 給群組中每一個選項name屬性相同名稱 交付表單時使用所選的value值交付
+subimit 建立一個按鈕，作用為表單交付到伺服器上　value值可改變按鈕值
+
+
+
+//========================================
+
+/*
+set_time_limit(0);
+$str = generatorPassword();
+$file = fopen("C:\\xampp\\htdocs\\javaimg\\secret.txt ","w"); //開啟檔案
+	fwrite($file,$str);
+	fclose($file);
+*/
+
+//system("C:\\xampp\\htdocs\\pro.exe"); 
+//===============================================================
+/*		$out1 = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><title>PHP程式網頁靜態化教學</title></head>
+		<body>歡迎訪問PHP網站開發教學網，本文主要介紹PHP網站頁面靜態化的方法
+		</body></html>";
+*/	
+/*		$fp = fopen("b.php","w");
+		if(!$fp)
+		{
+			echo "System Error";
+			exit();
+		}
+		else {
+			fwrite($fp,$out1);
+			fclose($fp);
+			echo "Success";
+*/		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
